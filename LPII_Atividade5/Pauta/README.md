@@ -20,6 +20,6 @@
 
 - Instanciar uma variável do tipo da classe Pauta atribuindo os valores via teclado de acordo como os atributos declarados.
 - Modificar o método toString contendo os nomes dos atributos (rótulos) antes dosvalores armazenados.
-- Para saber se o aluno está reprovado faça o cálculo considerando que a disciplinatem 100h e o número de faltas permitidas é de 25%.
-- A média do tipo aritmética. Mostre também o nome do aluno.
-- Para saber se o aluno foi aprovado a média tem que ser maior ou igual a 7 efrequência maior ou igual que 75%.
+- Para saber se o aluno está reprovado fazer o cálculo considerando que a disciplinatem 100h e o número de faltas permitidas é de 25%.
+- A média do tipo aritmética. Mostrar também o nome do aluno.
+- Para saber se o aluno foi aprovado a média tem que ser maior ou igual a 7 e frequência maior ou igual que 75%.
