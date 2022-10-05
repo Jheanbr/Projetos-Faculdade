@@ -1,18 +1,25 @@
-## Getting Started
+# Atividade 05 – ESTRUTURAS DE DADOS HETEROGÊNEAS
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Objetivos:
 
-## Folder Structure
 
-The workspace contains two folders by default, where:
+- Criar a classe Pauta, para armazenar os dados de um aluno em uma disciplina 
+- Construir dois construtores: um sem parâmetro e outro com os atributos como parâmetros
+- Construir os métodos get, set e toString.
+- Criar a Main (PautaMain)
+- Criar um menu com as seguintes opções
+  - Cadastrar um aluno
+  - Mostrar todos os dados do aluno
+  - Verificar se o aluno está reprovado por falta
+  - Mostrar a média do aluno
+  - Mostrar situação de aprovação ou reprovação
+  - Finalizar operações
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Considerações
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- Instanciar uma variável do tipo da classe Pauta atribuindo os valores via teclado de acordo como os atributos declarados.
+- Modificar o método toString contendo os nomes dos atributos (rótulos) antes dosvalores armazenados.
+- Para saber se o aluno está reprovado faça o cálculo considerando que a disciplinatem 100h e o número de faltas permitidas é de 25%.
+- A média do tipo aritmética. Mostre também o nome do aluno.
+- Para saber se o aluno foi aprovado a média tem que ser maior ou igual a 7 efrequência maior ou igual que 75%.
