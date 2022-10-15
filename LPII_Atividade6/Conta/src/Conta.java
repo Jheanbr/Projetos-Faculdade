@@ -4,29 +4,29 @@ public class Conta {
    private double saldo;
 
     public Conta() {
-        numeroConta =0;
-        titular= "";
-        saldo=0;
+        this.numeroConta =0;
+        this.titular= "";
+        this.saldo=0;
     }
     public Conta(int numeroConta, String titular, double saldo){
-        this.titular= titular;
-        this.numeroConta= numeroConta;
-        this.saldo= saldo;
+        this.titular = titular;
+        this.numeroConta = numeroConta;
+        this.saldo = saldo;
     }
     public int getNumeroConta() {
-        return numeroConta;
+        return this.numeroConta;
     }
     public void setNumeroConta(int numeroConta) {
         this.numeroConta = numeroConta;
     }
     public double getSaldo() {
-        return saldo;
+        return this.saldo;
     }
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
+    public  void setSaldo(double novo) {
+        this.saldo = novo;
     }
     public String getTitular() {
-        return titular;
+        return this.titular;
     }
     public void setTitular(String titular) {
         this.titular = titular;
