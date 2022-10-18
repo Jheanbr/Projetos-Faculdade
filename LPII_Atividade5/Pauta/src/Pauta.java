@@ -1,9 +1,9 @@
 public class Pauta {
-    int matricula;
-    String nomeAluno;
-    int numFalta;
-    double nota1;
-    double nota2;
+   private  int matricula;
+   private  String nomeAluno;
+   private  int numFalta;
+   private  double nota1;
+   private  double nota2;
 
     public Pauta(){
         this.matricula = 0;

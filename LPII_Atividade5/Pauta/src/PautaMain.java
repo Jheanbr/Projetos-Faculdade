@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class PautaMain {
-    static Scanner scan = new Scanner(System.in);
-    static Pauta aluno = new Pauta();
+    static Scanner scan = new Scanner(System.in);   
     static public  void main(String[] args) throws Exception {
+        Pauta aluno = new Pauta();
         int opcao;
         do {
        System.out.println("Digite 1 para Cadastrar um aluno\n"
@@ -16,21 +16,21 @@ public class PautaMain {
                         opcao = scan.nextInt();
             switch(opcao){
                 case 1:
-                    CadastrarAluno();
+                    CadastrarAluno(aluno);
                 break;
                 case 2:
                     System.out.println(aluno.toString()+"\n");
                 break;
                 case 3:       
                     System.out.println("No quesito faltas, o aluno "
-                    +aluno.nomeAluno+" está: "
-                    + VerificarFaltas()+"!\n");
+                    +aluno.getNomeAluno()+" está: "
+                    + VerificarFaltas(aluno)+"!\n");
                 break;
                 case 4:
-                    System.out.println("A média do aluno "+aluno.nomeAluno+" é "+mediaAluno()+"\n");
+                    System.out.println("A média do aluno "+aluno.getNomeAluno()+" é "+mediaAluno(aluno)+"\n");
                 break;
                 case 5:
-                mostrarSituacao();             
+                mostrarSituacao(aluno);             
                 default: break;
 
             }
@@ -38,28 +38,22 @@ public class PautaMain {
         }while(opcao !=6);
     }
 
-    static public void CadastrarAluno() {      
+    static public void CadastrarAluno(Pauta aluno) {      
         System.out.println("Digite a matrícula do Aluno");
-        int matricula =scan.nextInt();
-        aluno.setMatricula(matricula);
+        aluno.setMatricula(scan.nextInt());
         System.out.println("Digite o nome do Aluno");
-        String nome=scan.next();
-        aluno.setNomeAluno(nome);
+        aluno.setNomeAluno(scan.next());
         System.out.println("Digite o numero de faltas do Aluno");
-        int falta =scan.nextInt();
-        aluno.setNumFalta(falta);
+        aluno.setNumFalta(scan.nextInt());
         System.out.println("Digite a 1° nota do Aluno");
-        int nota1 =scan.nextInt();
-        aluno.setNota1(nota1);
+        aluno.setNota1(scan.nextDouble());
         System.out.println("Digite a 2 ° nota do Aluno");
-        int nota2 =scan.nextInt();
-        aluno.setNota2(nota2);      
+        aluno.setNota2(scan.nextDouble());      
     }
 
-    static public String VerificarFaltas(){
-        int faltas = aluno.getNumFalta();
+    static public String VerificarFaltas(Pauta aluno){ 
         String aprovado; 
-        if (faltas <= 25){
+        if (aluno.getNumFalta() <= 25){
          aprovado = "aprovado";
         }else{
             aprovado = "reprovado";
@@ -67,20 +61,20 @@ public class PautaMain {
         return aprovado;
     }
 
-    static public double mediaAluno(){
-        return (aluno.nota1+aluno.nota2)/2 ;
+    static public double mediaAluno(Pauta aluno){
+        return (aluno.getNota1()+aluno.getNota2())/2 ;
     }
 
-    static public void mostrarSituacao(){
+    static public void mostrarSituacao(Pauta aluno){
         String situacao;
-        if ((mediaAluno()>=7)&&(VerificarFaltas().equals("aprovado"))){
+        if ((mediaAluno(aluno)>=7)&&(VerificarFaltas(aluno).equals("aprovado"))){
             situacao = "aprovado";
         }else{
             situacao = "reprovado";
          } 
-         System.out.println("O aluno "+aluno.nomeAluno+
-         " está "+situacao+" com média de "+mediaAluno()+
-         ", tem   "+ aluno.numFalta+ 
+         System.out.println("O aluno "+aluno.getNomeAluno()+
+         " está "+situacao+" com média de "+mediaAluno(aluno)+
+         ", tem   "+ aluno.getNumFalta()+ 
          " faltas de um possível de 25 (25% da carga horária)");
         }
            
