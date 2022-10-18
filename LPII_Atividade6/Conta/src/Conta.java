@@ -1,8 +1,11 @@
+import java.util.Scanner;
+
 public class Conta {
    private int numeroConta;
    private String titular;
    private double saldo;
 
+   Scanner scan = new Scanner(System.in);
     public Conta() {
         this.numeroConta =0;
         this.titular= "";
@@ -38,7 +41,7 @@ public class Conta {
         return super.toString();
     }
 
-    public boolean SacarDinheiro(double valorSacado) {
+    public boolean sacarDinheiro(double valorSacado) {
         boolean saque;
 
             if (saldo >=valorSacado){
@@ -48,7 +51,13 @@ public class Conta {
                 saque =false;
             }
 
-
         return saque;
+    }
+
+    public void depositarDinheiro() {    
+        System.out.println("Digite o valor a ser depositado na conta do titular:"
+        +getTitular()+" de número "+ getNumeroConta()+"!");
+        setSaldo(scan.nextDouble()+getSaldo());
+        System.out.println("\nValor depositado com sucesso!");
     }
 }

@@ -8,8 +8,8 @@ public class ContaMain {
         
         Conta conta = new Conta();int opcao;
 
-        do {
-       System.out.println("Digite 1 para Cadastrar uma conta de cliente\n"
+     do {
+             System.out.println("Digite 1 para Cadastrar uma conta de cliente\n"
                          +"Digite 2 para Mostrar Saldo da conta\n"
                          +"Digite 3 para Sacar dinheiro\n"
                          +"Digite 4 para Depositar\n"
@@ -18,13 +18,13 @@ public class ContaMain {
                         opcao = scan.nextInt();
             switch(opcao){
                 case 1:
-                cadastrarConta();
+                    cadastrarConta(conta);
                 break;
                 case 2:
-                System.out.println("O saldo da conta é:"+conta.getSaldo());
+                    System.out.println("O saldo da conta é:"+conta.getSaldo());
                 break;
                 case 3:       
-                    sacar(conta.getSaldo());
+                    sacar(conta);
                 break;
                 case 4:
                    conta.depositarDinheiro();
@@ -36,28 +36,24 @@ public class ContaMain {
 
         }while(opcao !=5);
 
-
     }
-
-     public static void sacar(double saldoAtual) {
-        Conta conta = new Conta();
+     public static void sacar(Conta conta ) {       
         double valorSacado;
         System.out.println("Digite o valor a ser sacado:");
-        valorSacado = scan.nextDouble();      
+        valorSacado = scan.nextDouble(); 
+
         if(conta.sacarDinheiro(valorSacado)){
-            System.out.println("Saque efetuado com sucesso!/n");
-            conta.setSaldo(saldoAtual-valorSacado);
+            System.out.println("Saque efetuado com sucesso!\n");
+            conta.setSaldo(conta.getSaldo()-valorSacado);
         }else{
             System.out.println("Saldo insuficiente!\n");
         }
     }
-    public static void cadastrarConta(){
-        Conta conta = new Conta();
+     public static void cadastrarConta(Conta conta){       
         System.out.println("Digite o nome do titular da conta");
         conta.setTitular(scan.next());
         System.out.println("Digite o numero da conta: ");
         conta.setNumeroConta(scan.nextInt());
     }
-    
-    
+       
 }
