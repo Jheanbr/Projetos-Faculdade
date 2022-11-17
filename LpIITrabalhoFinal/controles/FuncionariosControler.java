@@ -5,12 +5,19 @@ import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
+
 import java.util.Scanner;
 
 import LpIITrabalhoFinal.Funcionarios;
 
 public class FuncionariosControler {
-    static String caminhoFuncionarios = "C:\\Users\\jhean\\Documents\\GitHub\\Projetos-Faculdade\\LpIITrabalhoFinal\\Arquivos\\Funcionarios.csv";
+
+    public static String caminhoProjeto = System.getProperty("user.dir");
+    public static String caminhoFuncionarios = caminhoProjeto+"\\LpIITrabalhoFinal\\Arquivos\\Funcionarios.csv";
+
+
+    // static File file = new File(caminhoFuncionarios);
+   // static String path = file.getPath();
     static StringBuffer memoria = new StringBuffer();
     static Scanner scan = new Scanner (System.in);
 

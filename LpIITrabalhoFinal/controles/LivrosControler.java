@@ -10,7 +10,10 @@ import java.util.Scanner;
 import LpIITrabalhoFinal.Livros;
 
 public class LivrosControler {
-    static String caminhoLivros = "C:\\Users\\jhean\\Documents\\GitHub\\Projetos-Faculdade\\LpIITrabalhoFinal\\Arquivos\\Livros.csv";
+    
+    public static String caminhoProjeto = System.getProperty("user.dir");
+    public static String caminhoLivros = caminhoProjeto+"\\LpIITrabalhoFinal\\Arquivos\\Livros.csv";
+
     static StringBuffer memoria = new StringBuffer();
     static Scanner scan = new Scanner (System.in);
     

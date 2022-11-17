@@ -1,6 +1,7 @@
 package LpIITrabalhoFinal;
 import java.util.Scanner;
 
+
 import LpIITrabalhoFinal.controles.AlunosControler;
 import LpIITrabalhoFinal.controles.FuncionariosControler;
 
@@ -9,13 +10,14 @@ public class BibliotecaMain {
     static StringBuffer memoria = new StringBuffer();
     static Scanner scan = new Scanner (System.in);
     static AlunosControler alunosControler = new AlunosControler();
+    
     static FuncionariosControler funcionariosControler = new FuncionariosControler();
     static Funcionarios funcionarios = new Funcionarios();
     static Alunos alunos = new Alunos();
     
         public static void main(String[] args) throws Exception {
             
-           
+            System.out.println(FuncionariosControler.caminhoFuncionarios);
             System.out.println("Bem vindo ao sistema da biblioteca!");
             System.out.println("Faça login com seu usuario de funcionario e senha para entrar:");
             System.out.println("LOGIN:");
